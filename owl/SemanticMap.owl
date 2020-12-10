@@ -1,0 +1,2875 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE rdf:RDF[
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY knowrob "http://knowrob.org/kb/knowrob.owl#">
+	<!ENTITY knowrob_u "http://knowrob.org/kb/knowrob_u.owl#">
+	<!ENTITY log "http://knowrob.org/kb/unreal_log.owl#">
+	<!ENTITY u-map "http://knowrob.org/kb/u_map.owl#">
+]>
+
+<rdf:RDF xmlns:computable="http://knowrob.org/kb/computable.owl#"
+	xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+	xmlns:knowrob_u="http://knowrob.org/kb/knowrob_u.owl#"
+	xmlns:u-map="http://knowrob.org/kb/u_map.owl#"
+	xml:base="http://knowrob.org/kb/u_map.owl#">
+
+	<!-- Ontologies -->
+	<owl:Ontology rdf:about="http://knowrob.org/kb/u_map.owl">
+		<owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
+		<owl:imports rdf:resource="package://knowrob_robcog/owl/knowrob_u.owl"/>
+	</owl:Ontology>
+	
+	<!-- Property Definitions -->
+	<owl:ObjectProperty rdf:about="&knowrob;describedInMap"/>
+	<owl:ObjectProperty rdf:about="&knowrob;pathToCadModel"/>
+
+	<!-- Property Definitions -->
+	<owl:DatatypeProperty rdf:about="&knowrob;quaternion"/>
+	<owl:DatatypeProperty rdf:about="&knowrob;translation"/>
+
+	<!-- Class Definitions -->
+	<owl:Class rdf:about="&knowrob;SemanticEnvironmentMap"/>
+	<owl:Class rdf:about="&knowrob;Pose"/>
+
+	<!-- Class IAIWindowTypeA -->
+	<owl:Class rdf:about="&knowrob;IAIWindowTypeA">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">220.000153</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">43.00061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">250.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIWindowTypeC -->
+	<owl:Class rdf:about="&knowrob;IAIWindowTypeC">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">43.000244</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">260.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">290.1828</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIWindowTypeB -->
+	<owl:Class rdf:about="&knowrob;IAIWindowTypeB">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">38.000122</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">124.630005</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">290.1828</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDoorA -->
+	<owl:Class rdf:about="&knowrob;IAIDoorA">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">117.880951</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">35.394409</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">213.999969</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDoorB -->
+	<owl:Class rdf:about="&knowrob;IAIDoorB">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">15.309692</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">106.03125</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">213.999985</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAILabFloor -->
+	<owl:Class rdf:about="&knowrob;IAILabFloor">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1349.963745</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1220.001221</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">20.000004</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDoorC -->
+	<owl:Class rdf:about="&knowrob;IAIDoorC">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">89.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">15.309784</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">214.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIIslandArea -->
+	<owl:Class rdf:about="&knowrob;IAIIslandArea">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">79.001419</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">244.000748</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">85.461945</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIOvenArea -->
+	<owl:Class rdf:about="&knowrob;IAIOvenArea">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">58.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">120.003082</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">149.89035</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIFridgeArea -->
+	<owl:Class rdf:about="&knowrob;IAIFridgeArea">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">58.043823</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">60.011139</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">149.915558</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAISinkArea -->
+	<owl:Class rdf:about="&knowrob;IAISinkArea">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">58.187592</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">204.995468</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">84.081573</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIOvenCase -->
+	<owl:Class rdf:about="&knowrob;IAIOvenCase">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">53.455475</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">58.200348</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">57.818214</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDishwasherCase -->
+	<owl:Class rdf:about="&knowrob;IAIDishwasherCase">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">47.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">56.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">68.000015</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIAnteroomLight -->
+	<owl:Class rdf:about="&knowrob;IAIAnteroomLight">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">25.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">25.000046</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">3.500061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDoorD -->
+	<owl:Class rdf:about="&knowrob;IAIDoorD">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">18.208984</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">149.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">246.499985</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIFridgeCasing -->
+	<owl:Class rdf:about="&knowrob;IAIFridgeCasing">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">49.266846</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">55.152031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">88.585754</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAICooktop -->
+	<owl:Class rdf:about="&knowrob;IAICooktop">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">54.00045</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">61.000412</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">2.699997</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAISink -->
+	<owl:Class rdf:about="&knowrob;IAISink">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">50.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">86.000038</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">20.000015</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIOvenKnob -->
+	<owl:Class rdf:about="&knowrob;IAIOvenKnob">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">2.508789</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIOvenBars -->
+	<owl:Class rdf:about="&knowrob;IAIOvenBars">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">47.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">45.900024</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">0.699997</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW60H29 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW60H29">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">51.000046</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">59.500046</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">28.500011</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW100H29 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW100H29">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">51.000092</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">99.000053</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">28.500019</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW60H36 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW60H36">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">51.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">59.500023</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">35.500008</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW60H58 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW60H58">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">51.000092</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">59.500061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">57.500008</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW60H14 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW60H14">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">50.976074</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">59.500061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">14.000015</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW30H132 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW30H132">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">52.800018</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">29.500092</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">132.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIOvenDoor -->
+	<owl:Class rdf:about="&knowrob;IAIOvenDoor">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.100342</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">58.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">45.500015</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDishwasherDoor -->
+	<owl:Class rdf:about="&knowrob;IAIDishwasherDoor">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">8.005646</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">56.749992</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">68.749992</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDishwasherLowerRack -->
+	<owl:Class rdf:about="&knowrob;IAIDishwasherLowerRack">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">42.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">49.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">13.200005</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDishwasherUpperRack -->
+	<owl:Class rdf:about="&knowrob;IAIDishwasherUpperRack">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">42.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">49.000031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">14.930706</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW80H29 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW80H29">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">51.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">79.500031</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">28.500015</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDrawerW80H14 -->
+	<owl:Class rdf:about="&knowrob;IAIDrawerW80H14">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">51.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">79.500023</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">14.000015</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIFridgeDoor -->
+	<owl:Class rdf:about="&knowrob;IAIFridgeDoor">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">6.136963</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">57.565804</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">86.342644</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIFridgeDoorPanel -->
+	<owl:Class rdf:about="&knowrob;IAIFridgeDoorPanel">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1.800201</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">59.499992</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">96.01001</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAITapMiddle -->
+	<owl:Class rdf:about="&knowrob;IAITapMiddle">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.140991</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.141003</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">5.580002</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIFilterSmallNew -->
+	<owl:Class rdf:about="&knowrob;IAIFilterSmallNew">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">3.445007</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">3.445003</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">0.196899</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIFilterBigNew -->
+	<owl:Class rdf:about="&knowrob;IAIFilterBigNew">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">6.69278</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">6.692574</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">2.73613</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIHandleW60 -->
+	<owl:Class rdf:about="&knowrob;IAIHandleW60">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">6.000534</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">50.499725</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1.494339</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIHandleW100 -->
+	<owl:Class rdf:about="&knowrob;IAIHandleW100">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">6.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">91.029755</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1.5</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIHandleH132 -->
+	<owl:Class rdf:about="&knowrob;IAIHandleH132">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">6.959312</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1.502106</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">124.530441</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIOvenDoorHandle -->
+	<owl:Class rdf:about="&knowrob;IAIOvenDoorHandle">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.217224</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">58.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.900024</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAITapBottom -->
+	<owl:Class rdf:about="&knowrob;IAITapBottom">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">19.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">19.000013</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">15.050003</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIDishwasherDoorPanel -->
+	<owl:Class rdf:about="&knowrob;IAIDishwasherDoorPanel">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1.800049</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">59.300034</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">72.000038</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIHandleW80 -->
+	<owl:Class rdf:about="&knowrob;IAIHandleW80">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">6.009232</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">70.505585</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1.5</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAIHandleW86 -->
+	<owl:Class rdf:about="&knowrob;IAIHandleW86">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">5.999992</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">1.500061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">85.499977</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAITapTop -->
+	<owl:Class rdf:about="&knowrob;IAITapTop">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">7.25</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">7.250005</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">4.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Class IAICeilingLight -->
+	<owl:Class rdf:about="&knowrob;IAICeilingLight">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">200.677429</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">20.000061</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+				<owl:hasValue rdf:datatype="&xsd;float">55.067215</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Individuals -->
+
+	<!-- Semantic Map SemanticEnvironmentMap_Avatar -->
+	<owl:NamedIndividual rdf:about="&u-map;SemanticEnvironmentMap_Avatar">
+		<rdf:type rdf:resource="&knowrob;SemanticEnvironmentMap"/>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeA -->
+	<owl:NamedIndividual rdf:about="&u-map;YniKp7cmlEOP0VslL1Edzw">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeA"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">339.138275</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;G3NeQtr71wigWDL6JdEu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshesMeshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeA/IAIWindowTypeA.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeA;Id,YniKp7cmlEOP0VslL1Edzw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;G3NeQtr71wigWDL6JdEu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">0.704839 3.270559 1.815083</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeC -->
+	<owl:NamedIndividual rdf:about="&u-map;lW09DP_q0EuwxpVA9gS8pQ">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeC"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">429.868011</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;X7hfQtr71wgaazL6_tIu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshesMeshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeC/IAIWindowTypeC.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeC;Id,lW09DP_q0EuwxpVA9gS8pQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;X7hfQtr71wgaazL6_tIu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-7.325143 -5.559447 1.599999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeA -->
+	<owl:NamedIndividual rdf:about="&u-map;a_Nbtw6TS0O7V0hsS35DpQ">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeA"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">339.138275</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;Pb1gQtr71wioczL62dMu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshesMeshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeA/IAIWindowTypeA.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeA;Id,a_Nbtw6TS0O7V0hsS35DpQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;Pb1gQtr71wioczL62dMu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-2.045155 3.270555 1.815083</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeA -->
+	<owl:NamedIndividual rdf:about="&u-map;3IOLO_n9Ck-WuIKqGLoEvw">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeA"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">339.138275</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;BIdhQtr71whYeDL6UdQu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeA/IAIWindowTypeA.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeA;Id,3IOLO_n9Ck-WuIKqGLoEvw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;BIdhQtr71whYeDL6UdQu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-4.805159 3.270551 1.819999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeA -->
+	<owl:NamedIndividual rdf:about="&u-map;vKyplQ3mZEWQNNk2daMxhw">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeA"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">339.138275</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;xetiQtr71wikfDL6v9Qu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeA/IAIWindowTypeA.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeA;Id,vKyplQ3mZEWQNNk2daMxhw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;xetiQtr71wikfDL6v9Qu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">0.000000 0.000000 -0.000001 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-4.785139 -8.869449 1.819999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeA -->
+	<owl:NamedIndividual rdf:about="&u-map;W9WsclNyN0mdj3AGI_6h3w">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeA"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">339.138275</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;z5VjQtr71wjcgDL6K9Uu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeA/IAIWindowTypeA.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeA;Id,W9WsclNyN0mdj3AGI_6h3w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;z5VjQtr71wjcgDL6K9Uu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">0.000000 0.000000 -0.000001 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-2.005137 -8.859442 1.819999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeB -->
+	<owl:NamedIndividual rdf:about="&u-map;K13ySK4KjkS_Td9xLNarag">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeB"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.0</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;UwhkQtr71wgYhjL6sdUu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeB/IAIWindowTypeB.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeB;Id,K13ySK4KjkS_Td9xLNarag;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;UwhkQtr71wgYhjL6sdUu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">0.000000 0.000000 -0.707106 -0.707107</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-7.285148 -2.724449 1.589999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeB -->
+	<owl:NamedIndividual rdf:about="&u-map;aEYKUNb3kEafr-coLH7uPg">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeB"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.0</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;A21lQtr71whmjTL6a9Yu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeB/IAIWindowTypeB.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeB;Id,aEYKUNb3kEafr-coLH7uPg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;A21lQtr71whmjTL6a9Yu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">0.894857 -8.859439 1.609999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDoorA -->
+	<owl:NamedIndividual rdf:about="&u-map;4DgX3eIddk2jK1_wnbZ9Yw">
+		<rdf:type rdf:resource="&knowrob;IAIDoorA"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">86.630844</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;d4tmQtr71wjkkTL63tYu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIDoors/IAIDoorA/IAIDoorA.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDoorA;Id,4DgX3eIddk2jK1_wnbZ9Yw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;d4tmQtr71wjkkTL63tYu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 0.642786 -0.766046</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.589222 -2.060802 1.059999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDoorB -->
+	<owl:NamedIndividual rdf:about="&u-map;KB6HNueX00O44wj2iLOSwQ">
+		<rdf:type rdf:resource="&knowrob;IAIDoorB"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">80.465294</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;ZwRnQtr71whomjL6udcu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIDoors/IAIDoorB/IAIDoorB.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDoorB;Id,KB6HNueX00O44wj2iLOSwQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;ZwRnQtr71whomjL6udcu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">2.024857 -6.269433 1.059999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAILabFloor -->
+	<owl:NamedIndividual rdf:about="&u-map;Y5afEkimKky_goqcP78pqQ">
+		<rdf:type rdf:resource="&knowrob;IAILabFloor"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">2445.028076</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;P85oQtr71wiwojL6jdgu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAILabFloor/IAILabFloor.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAILabFloor;Id,Y5afEkimKky_goqcP78pqQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;P85oQtr71wiwojL6jdgu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-3.655147 -3.599442 -0.010001</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDoorC -->
+	<owl:NamedIndividual rdf:about="&u-map;x7B9CszYwkSPvJgrC_fRBw">
+		<rdf:type rdf:resource="&knowrob;IAIDoorC"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">70.562805</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;vCVpQtr71wjaqjL6Xtku4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIDoors/IAIDoorC/IAIDoorC.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDoorC;Id,x7B9CszYwkSPvJgrC_fRBw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;vCVpQtr71wjaqjL6Xtku4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 0.707106 -0.707108</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">4.144847 -1.749432 1.059999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeC -->
+	<owl:NamedIndividual rdf:about="&u-map;foPZBsyok0GZBtF3airWbg">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeC"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">365.108337</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;BvBqQtr71wh4sjL6INou4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeC/IAIWindowTypeC.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeC;Id,foPZBsyok0GZBtF3airWbg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;BvBqQtr71wh4sjL6INou4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 0.707106 -0.707108</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">3.214861 -8.889438 1.619999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIWindowTypeA -->
+	<owl:NamedIndividual rdf:about="&u-map;hX-NuW0hn0S57k9yLt4WqA">
+		<rdf:type rdf:resource="&knowrob;IAIWindowTypeA"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">339.138275</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;WW5rQtr71wgytzL6mtou4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIWindows/IAIWindowTypeA/IAIWindowTypeA.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIWindowTypeA;Id,hX-NuW0hn0S57k9yLt4WqA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;WW5rQtr71wgytzL6mtou4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">4.014841 3.280565 1.819999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIIslandArea -->
+	<owl:NamedIndividual rdf:about="&u-map;tpzV6l885UGL785BwZFHYQ">
+		<rdf:type rdf:resource="&knowrob;IAIIslandArea"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:child rdf:resource="&u-map;ds8RsNGPIUmzcEUZLYv-1w"/>
+		<knowrob:child rdf:resource="&u-map;3u4V5AQZzUa-n0gMF2tmLA"/>
+		<knowrob:child rdf:resource="&u-map;jBmfQuDmZU65ljvxk8UfGw"/>
+		<knowrob:child rdf:resource="&u-map;8vvGvpP6aUKpTY_KdcySGA"/>
+		<knowrob:child rdf:resource="&u-map;p2vKETw-P0S6ts1E8_LJxQ"/>
+		<knowrob:child rdf:resource="&u-map;KnCVm0S4cUSrMiMcX_6q3w"/>
+		<knowrob:child rdf:resource="&u-map;hFKAV1FpwEyLvbkSd4oFXA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">52.242283</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">true</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;_ZtsQtr71wg0xDL659su4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIIslandArea/IAIIslandArea.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIIslandArea;Id,tpzV6l885UGL785BwZFHYQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;_ZtsQtr71wg0xDL659su4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">0.000000 0.000000 -0.000003 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-1.037725 1.718864 0.428127</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenArea -->
+	<owl:NamedIndividual rdf:about="&u-map;ScIEXCkp30OC3GX6qyn6IA">
+		<rdf:type rdf:resource="&knowrob;IAIOvenArea"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:child rdf:resource="&u-map;m__YU48hYEyRlgGs6nzoBA"/>
+		<knowrob:child rdf:resource="&u-map;f2G1R0l3VEGQL_uu6-dZcQ"/>
+		<knowrob:child rdf:resource="&u-map;onMVAtxcYU-Emfmo4RS-4g"/>
+		<knowrob:child rdf:resource="&u-map;hW_22AsScEaGRUcFxtwgdw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">39.314579</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;GkptQtr71wgC0zL6Yt0u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIOvenArea/IAIOvenArea.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenArea;Id,ScIEXCkp30OC3GX6qyn6IA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;GkptQtr71wgC0zL6Yt0u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.580555 1.940684 0.753147</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIFridgeArea -->
+	<owl:NamedIndividual rdf:about="&u-map;BaWGkCOOSEWPhw2Kp5yAuw">
+		<rdf:type rdf:resource="&knowrob;IAIFridgeArea"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:child rdf:resource="&u-map;5JHkmjUwyUuaOIpMFPcaYA"/>
+		<knowrob:child rdf:resource="&u-map;afS9yEehOEmXbl4dreIWqw"/>
+		<knowrob:child rdf:resource="&u-map;gXa7KeZmpU-vUcrXryNaTA"/>
+		<knowrob:child rdf:resource="&u-map;fARuOIXJWkWmHrDuu0MKkg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">21.460661</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;Jd1uQtr71wgg3TL6ZN4u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIFridgeArea/IAIFridgeArea.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIFridgeArea;Id,BaWGkCOOSEWPhw2Kp5yAuw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;Jd1uQtr71wgg3TL6ZN4u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.583830 -1.021599 0.754114</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAISinkArea -->
+	<owl:NamedIndividual rdf:about="&u-map;Ph302ZoDZEaZ8X_H7KWIdA">
+		<rdf:type rdf:resource="&knowrob;IAISinkArea"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:child rdf:resource="&u-map;SCjT_g6xo0CZjP3Rq4j3sg"/>
+		<knowrob:child rdf:resource="&u-map;RnZIoR0MKEqgtqStkWG-lw"/>
+		<knowrob:child rdf:resource="&u-map;Be0PXSLFSEyvjFVhwwgTUQ"/>
+		<knowrob:child rdf:resource="&u-map;udGlYMSzA02U6HlKQK-F0Q"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">41.214603</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;3YJvQtr71wgC5zL6Yd8u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAISinkArea/IAISinkArea.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAISinkArea;Id,Ph302ZoDZEaZ8X_H7KWIdA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;3YJvQtr71wgC5zL6Yd8u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.600686 0.310776 0.422057</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenCase -->
+	<owl:NamedIndividual rdf:about="&u-map;BDUtYq_YLE-WD5S-1lJH_g">
+		<rdf:type rdf:resource="&knowrob;IAIOvenCase"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:child rdf:resource="&u-map;J2R8XzQAuUS31QLrYmfG_w"/>
+		<knowrob:child rdf:resource="&u-map;o3jId1ktS0ahf3zoFS0J1w"/>
+		<knowrob:child rdf:resource="&u-map;9c9JwTS2cEqTLsrKUx3j9A"/>
+		<knowrob:child rdf:resource="&u-map;0JmKwXfn-kWm_nnbOfFrDQ"/>
+		<knowrob:child rdf:resource="&u-map;3kN9EXgIv0SpdDZtCTezBw"/>
+		<knowrob:child rdf:resource="&u-map;RpI4vc7n_EqYGsp44DsahA"/>
+		<knowrob:child rdf:resource="&u-map;-IWR8dZmkUCdWLsaIgCJgQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">29.534172</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;NIBwQtr71wiY8TL6cOAu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/3DScans/IAIOvenCase/IAIOvenCase.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenCase;Id,BDUtYq_YLE-WD5S-1lJH_g;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;NIBwQtr71wiY8TL6cOAu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.568529 1.940931 1.172426</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDishwasherCase -->
+	<owl:NamedIndividual rdf:about="&u-map;TnrSW6Jy7E6YP2_rxdrLuA">
+		<rdf:type rdf:resource="&knowrob;IAIDishwasherCase"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:child rdf:resource="&u-map;4Qe6CtSziUWnFky5IsZCMw"/>
+		<knowrob:child rdf:resource="&u-map;pX0uDWytNk-esndC7V1oeQ"/>
+		<knowrob:child rdf:resource="&u-map;mnHbQsHYUkGbrWzsp0aFpg"/>
+		<knowrob:child rdf:resource="&u-map;hKAtW09Y5Uuyu4YyOgv3_w"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">13.384906</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;gVBxQtr71whq_DL6huEu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIDishwasherCase/IAIDishwasherCase.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDishwasherCase;Id,TnrSW6Jy7E6YP2_rxdrLuA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;gVBxQtr71whq_DL6huEu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.622239 0.214071 0.472684</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIAnteroomLight -->
+	<owl:NamedIndividual rdf:about="&u-map;SPvGqGw2x0SE1oUbHxmKPw">
+		<rdf:type rdf:resource="&knowrob;IAIAnteroomLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.0</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;4sFyQtr71wgwBDP6TeIu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIAnteroomLight/IAIAnteroomLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIAnteroomLight;Id,SPvGqGw2x0SE1oUbHxmKPw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;4sFyQtr71wgwBDP6TeIu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 1.000000 0.000001 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">5.044846 -2.659434 2.429999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIAnteroomLight -->
+	<owl:NamedIndividual rdf:about="&u-map;hafvN8n7XEOhGHzdeBeKbQ">
+		<rdf:type rdf:resource="&knowrob;IAIAnteroomLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.0</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;X9tzQtr71wh0CzP6B-Mu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIAnteroomLight/IAIAnteroomLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIAnteroomLight;Id,hafvN8n7XEOhGHzdeBeKbQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;X9tzQtr71wh0CzP6B-Mu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 1.000000 0.000001 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">3.594850 -2.659435 2.429999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIAnteroomLight -->
+	<owl:NamedIndividual rdf:about="&u-map;5lvQoV7HHEqvRur-q_cBIw">
+		<rdf:type rdf:resource="&knowrob;IAIAnteroomLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.0</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;uzV0Qtr71whgEDP6hOMu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIAnteroomLight/IAIAnteroomLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIAnteroomLight;Id,5lvQoV7HHEqvRur-q_cBIw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;uzV0Qtr71whgEDP6hOMu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 1.000000 0.000001 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.974850 -2.659436 2.429999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIAnteroomLight -->
+	<owl:NamedIndividual rdf:about="&u-map;QWeWGZQSX0yRJy5oiCavBA">
+		<rdf:type rdf:resource="&knowrob;IAIAnteroomLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.0</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;Fql1Qtr71wiiFDP68eMu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIAnteroomLight/IAIAnteroomLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIAnteroomLight;Id,QWeWGZQSX0yRJy5oiCavBA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;Fql1Qtr71wiiFDP68eMu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 1.000000 0.000001 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">3.954850 -5.049434 3.019999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIAnteroomLight -->
+	<owl:NamedIndividual rdf:about="&u-map;BPY1MIJwUk-PB4ZSYHw9tg">
+		<rdf:type rdf:resource="&knowrob;IAIAnteroomLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.0</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;na52Qtr71wjuGDP6X-Qu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIAnteroomLight/IAIAnteroomLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIAnteroomLight;Id,BPY1MIJwUk-PB4ZSYHw9tg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;na52Qtr71wjuGDP6X-Qu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 1.000000 0.000001 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">3.954852 -7.419434 3.019999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDoorD -->
+	<owl:NamedIndividual rdf:about="&u-map;db510j9v0E-rDUK0s2t1Nw">
+		<rdf:type rdf:resource="&knowrob;IAIDoorD"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">129.724823</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;WK53Qtr71wiKHTP61uQu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAIDoors/IAIDoorD/IAIDoorD.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDoorD;Id,db510j9v0E-rDUK0s2t1Nw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;WK53Qtr71wiKHTP61uQu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">6.068344 -2.589433 1.239999</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIFridgeCasing -->
+	<owl:NamedIndividual rdf:about="&u-map;fARuOIXJWkWmHrDuu0MKkg">
+		<rdf:type rdf:resource="&knowrob;IAIFridgeCasing"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BaWGkCOOSEWPhw2Kp5yAuw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">26.951302</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;sRZ4Qtr71wiUJzP61uUu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/3DScans/IAIFridgeCasing/IAIFridgeCasing.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIFridgeCasing;Id,fARuOIXJWkWmHrDuu0MKkg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;sRZ4Qtr71wiUJzP61uUu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.599355 -1.015590 0.963156</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICooktop -->
+	<owl:NamedIndividual rdf:about="&u-map;hFKAV1FpwEyLvbkSd4oFXA">
+		<rdf:type rdf:resource="&knowrob;IAICooktop"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;tpzV6l885UGL785BwZFHYQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">6.36445</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;rL95Qtr71whAMDP6tOYu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAICooktop/IAICooktop.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICooktop;Id,hFKAV1FpwEyLvbkSd4oFXA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;rL95Qtr71whAMDP6tOYu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000003 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-1.038326 2.483141 0.859161</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAISink -->
+	<owl:NamedIndividual rdf:about="&u-map;udGlYMSzA02U6HlKQK-F0Q">
+		<rdf:type rdf:resource="&knowrob;IAISink"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;Ph302ZoDZEaZ8X_H7KWIdA"/>
+		<knowrob:child rdf:resource="&u-map;SU9Uok7geEOGDUeFGjySyg"/>
+		<knowrob:child rdf:resource="&u-map;T5S2TJurV0OeMP7tkFq-uQ"/>
+		<knowrob:child rdf:resource="&u-map;8sXmrVcQREKqbWU1e94j8Q"/>
+		<knowrob:child rdf:resource="&u-map;J7reQzj2X0yfSiwyALm5hg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">3.662618</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;9uJ6Qtr71wg6OzP6zucu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAISink/IAISink.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAISink;Id,udGlYMSzA02U6HlKQK-F0Q;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;9uJ6Qtr71wg6OzP6zucu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.601022 -0.174296 0.751263</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenKnob -->
+	<owl:NamedIndividual rdf:about="&u-map;-IWR8dZmkUCdWLsaIgCJgQ">
+		<rdf:type rdf:resource="&knowrob;IAIOvenKnob"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BDUtYq_YLE-WD5S-1lJH_g"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.069222</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">false</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;XJZ7Qtr71whyRDP6uugu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenKnob/IAIOvenKnob.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenKnob;Id,-IWR8dZmkUCdWLsaIgCJgQ; EDCookTopButtonController;HeatingElementIndex,1;Radius,3.0;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;XJZ7Qtr71whyRDP6uugu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.290388 2.159211 1.384758</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenKnob -->
+	<owl:NamedIndividual rdf:about="&u-map;RpI4vc7n_EqYGsp44DsahA">
+		<rdf:type rdf:resource="&knowrob;IAIOvenKnob"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BDUtYq_YLE-WD5S-1lJH_g"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.069222</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;qAV8Qtr71whqTDP6heku4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenKnob/IAIOvenKnob.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenKnob;Id,RpI4vc7n_EqYGsp44DsahA; EDCookTopButtonController;HeatingElementIndex,0;Radius,3.0;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;qAV8Qtr71whqTDP6heku4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.290388 2.032380 1.384758</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenKnob -->
+	<owl:NamedIndividual rdf:about="&u-map;3kN9EXgIv0SpdDZtCTezBw">
+		<rdf:type rdf:resource="&knowrob;IAIOvenKnob"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BDUtYq_YLE-WD5S-1lJH_g"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.069222</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;EVZ9Qtr71wjsUTP6Euou4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenKnob/IAIOvenKnob.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenKnob;Id,3kN9EXgIv0SpdDZtCTezBw; EDCookTopButtonController;HeatingElementIndex,3;Radius,3.0;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;EVZ9Qtr71wjsUTP6Euou4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.290388 2.094787 1.384758</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenKnob -->
+	<owl:NamedIndividual rdf:about="&u-map;0JmKwXfn-kWm_nnbOfFrDQ">
+		<rdf:type rdf:resource="&knowrob;IAIOvenKnob"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BDUtYq_YLE-WD5S-1lJH_g"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.069222</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;u05-Qtr71wj2VjP6lOou4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenKnob/IAIOvenKnob.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenKnob;Id,0JmKwXfn-kWm_nnbOfFrDQ; EDOvenButtonController;HeatingElementIndex,1;OvenLightIndex,2;Radius,3;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;u05-Qtr71wj2VjP6lOou4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.290389 1.787458 1.387199</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenKnob -->
+	<owl:NamedIndividual rdf:about="&u-map;9c9JwTS2cEqTLsrKUx3j9A">
+		<rdf:type rdf:resource="&knowrob;IAIOvenKnob"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BDUtYq_YLE-WD5S-1lJH_g"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.069222</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;5cJ_Qtr71wgAXDP6Fesu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenKnob/IAIOvenKnob.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenKnob;Id,9c9JwTS2cEqTLsrKUx3j9A; EDCookTopButtonController;HeatingElementIndex,2;Radius,3.0;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;5cJ_Qtr71wgAXDP6Fesu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.290388 1.971804 1.384758</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenBars -->
+	<owl:NamedIndividual rdf:about="&u-map;o3jId1ktS0ahf3zoFS0J1w">
+		<rdf:type rdf:resource="&knowrob;IAIOvenBars"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BDUtYq_YLE-WD5S-1lJH_g"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">1.685457</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;Ft2AQtr71wjiYDP6kesu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenBars/IAIOvenBars.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenBars;Id,o3jId1ktS0ahf3zoFS0J1w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;Ft2AQtr71wjiYDP6kesu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.594662 1.942709 1.084757</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;KnCVm0S4cUSrMiMcX_6q3w">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;tpzV6l885UGL785BwZFHYQ"/>
+		<knowrob:child rdf:resource="&u-map;qYGCC-t0BkKx-vqQc_k6vQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">5.53553</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;gTqBQtr71wg-aTP6aOwu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H29/IAIDrawerW60H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H29;Id,KnCVm0S4cUSrMiMcX_6q3w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;gTqBQtr71wg-aTP6aOwu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.996785 0.912639 0.508127</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;p2vKETw-P0S6ts1E8_LJxQ">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;tpzV6l885UGL785BwZFHYQ"/>
+		<knowrob:child rdf:resource="&u-map;MZPTcn_y0EybjwdeIeQ3Hw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">5.53553</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;tViCQtr71whYcjP6Ue0u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H29/IAIDrawerW60H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H29;Id,p2vKETw-P0S6ts1E8_LJxQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;tViCQtr71whYcjP6Ue0u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.996788 2.522637 0.508127</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;8vvGvpP6aUKpTY_KdcySGA">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;tpzV6l885UGL785BwZFHYQ"/>
+		<knowrob:child rdf:resource="&u-map;LwDM-nbbuE2ASggWdzuNmQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">5.53553</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;aeWDQtr71wgMeDP64u0u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H29/IAIDrawerW60H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H29;Id,8vvGvpP6aUKpTY_KdcySGA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;aeWDQtr71wgMeDP64u0u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.996788 2.522637 0.218127</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW100H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;jBmfQuDmZU65ljvxk8UfGw">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW100H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;tpzV6l885UGL785BwZFHYQ"/>
+		<knowrob:child rdf:resource="&u-map;rLcxDN8mZEqYUR7FOU8Ydw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">7.987848</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;hKeEQtr71wjAfTP6de4u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW100H29/IAIDrawerW100H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW100H29;Id,jBmfQuDmZU65ljvxk8UfGw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;hKeEQtr71wjAfTP6de4u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.996786 1.717638 0.508127</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW100H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;3u4V5AQZzUa-n0gMF2tmLA">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW100H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;tpzV6l885UGL785BwZFHYQ"/>
+		<knowrob:child rdf:resource="&u-map;rbaalc-hGEqoHQZMPWLuow"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">7.987848</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;LOSFQtr71wj4hjP6YO8u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW100H29/IAIDrawerW100H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW100H29;Id,3u4V5AQZzUa-n0gMF2tmLA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;LOSFQtr71wj4hjP6YO8u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.996786 1.717639 0.218127</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H36 -->
+	<owl:NamedIndividual rdf:about="&u-map;gXa7KeZmpU-vUcrXryNaTA">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H36"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BaWGkCOOSEWPhw2Kp5yAuw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">5.072651</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;0OmGQtr71wjUjDP69-8u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H36/IAIDrawerW60H36.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H36;Id,gXa7KeZmpU-vUcrXryNaTA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;0OmGQtr71wjUjDP69-8u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.549657 -1.021599 0.327661</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H58 -->
+	<owl:NamedIndividual rdf:about="&u-map;hW_22AsScEaGRUcFxtwgdw">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H58"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;ScIEXCkp30OC3GX6qyn6IA"/>
+		<knowrob:child rdf:resource="&u-map;-6q1WRpGU0GA84htsDt2EA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">6.775379</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;w3WHQtr71wgWljP64_Au4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H58/IAIDrawerW60H58.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H58;Id,hW_22AsScEaGRUcFxtwgdw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;w3WHQtr71wgWljP64_Au4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.547891 1.940683 0.441728</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H14 -->
+	<owl:NamedIndividual rdf:about="&u-map;onMVAtxcYU-Emfmo4RS-4g">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H14"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;ScIEXCkp30OC3GX6qyn6IA"/>
+		<knowrob:child rdf:resource="&u-map;YcdEOjyg3UyE6vF1GlKCcA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">3.822727</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;6AmIQtr71wjknzP63_Eu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H14/IAIDrawerW60H14.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H14;Id,onMVAtxcYU-Emfmo4RS-4g;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;6AmIQtr71wjknzP63_Eu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.547599 1.940683 0.800767</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW30H132 -->
+	<owl:NamedIndividual rdf:about="&u-map;f2G1R0l3VEGQL_uu6-dZcQ">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW30H132"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;ScIEXCkp30OC3GX6qyn6IA"/>
+		<knowrob:child rdf:resource="&u-map;Zsy9nZwahky5O00PtCfRhQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">4.964962</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;1tmJQtr71wikqDP6v_Iu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW30H132/IAIDrawerW30H132.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW30H132;Id,f2G1R0l3VEGQL_uu6-dZcQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;1tmJQtr71wikqDP6v_Iu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.555283 2.390679 0.813329</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW30H132 -->
+	<owl:NamedIndividual rdf:about="&u-map;m__YU48hYEyRlgGs6nzoBA">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW30H132"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;ScIEXCkp30OC3GX6qyn6IA"/>
+		<knowrob:child rdf:resource="&u-map;kLvFtu0sgUa2Wxzm6xFpZg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">4.964962</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;HOSKQtr71wigsTP6pPMu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW30H132/IAIDrawerW30H132.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW30H132;Id,m__YU48hYEyRlgGs6nzoBA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;HOSKQtr71wigsTP6pPMu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.555283 1.490680 0.813329</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenDoor -->
+	<owl:NamedIndividual rdf:about="&u-map;J2R8XzQAuUS31QLrYmfG_w">
+		<rdf:type rdf:resource="&knowrob;IAIOvenDoor"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BDUtYq_YLE-WD5S-1lJH_g"/>
+		<knowrob:child rdf:resource="&u-map;fjCOHMlHJ0S_1GwEhGsx1A"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">2.070521</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;5qWLQtr71wiQtzP6PPQu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenDoor/IAIOvenDoor.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenDoor;Id,J2R8XzQAuUS31QLrYmfG_w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;5qWLQtr71wiQtzP6PPQu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.322122 1.940931 1.105713</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDishwasherDoor -->
+	<owl:NamedIndividual rdf:about="&u-map;hKAtW09Y5Uuyu4YyOgv3_w">
+		<rdf:type rdf:resource="&knowrob;IAIDishwasherDoor"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;TnrSW6Jy7E6YP2_rxdrLuA"/>
+		<knowrob:child rdf:resource="&u-map;sn4r1C-NiU2H2NzqPkQlJg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">4.314032</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;8SOMQtr71wgCwzP6YvUu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIDishwasherDoor/IAIDishwasherDoor.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDishwasherDoor;Id,hKAtW09Y5Uuyu4YyOgv3_w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;8SOMQtr71wgCwzP6YvUu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.362397 0.213454 0.470240</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDishwasherLowerRack -->
+	<owl:NamedIndividual rdf:about="&u-map;mnHbQsHYUkGbrWzsp0aFpg">
+		<rdf:type rdf:resource="&knowrob;IAIDishwasherLowerRack"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;TnrSW6Jy7E6YP2_rxdrLuA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">1.071138</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;QsGNQtr71whwzTP6bfYu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIDishwasherLowerRack/IAIDishwasherLowerRack.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDishwasherLowerRack;Id,mnHbQsHYUkGbrWzsp0aFpg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;QsGNQtr71whwzTP6bfYu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.606737 0.213833 0.350708</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDishwasherUpperRack -->
+	<owl:NamedIndividual rdf:about="&u-map;pX0uDWytNk-esndC7V1oeQ">
+		<rdf:type rdf:resource="&knowrob;IAIDishwasherUpperRack"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;TnrSW6Jy7E6YP2_rxdrLuA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">2.496556</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;wyiOQtr71wi02TP6p_cu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIDishwasherUpperRack/IAIDishwasherUpperRack.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDishwasherUpperRack;Id,pX0uDWytNk-esndC7V1oeQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;wyiOQtr71wi02TP6p_cu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.620043 0.213833 0.606107</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW80H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;Be0PXSLFSEyvjFVhwwgTUQ">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW80H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;Ph302ZoDZEaZ8X_H7KWIdA"/>
+		<knowrob:child rdf:resource="&u-map;nGkARoj-ikaxBJA4zx6_2A"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">6.5991</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;JaSPQtr71wiq4zP6pvgu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW80H29/IAIDrawerW80H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW80H29;Id,Be0PXSLFSEyvjFVhwwgTUQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;JaSPQtr71wiq4zP6pvgu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.556467 0.907615 0.238180</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW80H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;RnZIoR0MKEqgtqStkWG-lw">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW80H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;Ph302ZoDZEaZ8X_H7KWIdA"/>
+		<knowrob:child rdf:resource="&u-map;EwhJy0SA6UKY4OOmsS9Dbg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">6.5991</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;wxGQQtr71whQ7TP6nfku4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW80H29/IAIDrawerW80H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW80H29;Id,RnZIoR0MKEqgtqStkWG-lw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;wxGQQtr71whQ7TP6nfku4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.550207 0.907615 0.526445</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW80H14 -->
+	<owl:NamedIndividual rdf:about="&u-map;4Qe6CtSziUWnFky5IsZCMw">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW80H14"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;TnrSW6Jy7E6YP2_rxdrLuA"/>
+		<knowrob:child rdf:resource="&u-map;0aQ38FLTYk-yfJY3L6J-0w"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">4.576022</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;puqRQtr71wi48zP6Qfou4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW80H14/IAIDrawerW80H14.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW80H14;Id,4Qe6CtSziUWnFky5IsZCMw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;puqRQtr71wi48zP6Qfou4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.556467 0.907615 0.741604</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H58 -->
+	<owl:NamedIndividual rdf:about="&u-map;SCjT_g6xo0CZjP3Rq4j3sg">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H58"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;Ph302ZoDZEaZ8X_H7KWIdA"/>
+		<knowrob:child rdf:resource="&u-map;7zkRbAd1fEG9W8M_DmQ0fQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">6.775379</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;hH-SQtr71wjm_DP6LPsu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H58/IAIDrawerW60H58.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H58;Id,SCjT_g6xo0CZjP3Rq4j3sg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;hH-SQtr71wjm_DP6LPsu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.556037 -0.387028 0.383421</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDrawerW60H29 -->
+	<owl:NamedIndividual rdf:about="&u-map;ds8RsNGPIUmzcEUZLYv-1w">
+		<rdf:type rdf:resource="&knowrob;IAIDrawerW60H29"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;tpzV6l885UGL785BwZFHYQ"/>
+		<knowrob:child rdf:resource="&u-map;oE-oMcWPa0e43vPRhnb5Ng"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">5.53553</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;f0eTQtr71whsAzT60_su4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDrawerW60H29/IAIDrawerW60H29.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDrawerW60H29;Id,ds8RsNGPIUmzcEUZLYv-1w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;f0eTQtr71whsAzT60_su4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.996785 0.912639 0.218127</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIFridgeDoor -->
+	<owl:NamedIndividual rdf:about="&u-map;afS9yEehOEmXbl4dreIWqw">
+		<rdf:type rdf:resource="&knowrob;IAIFridgeDoor"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BaWGkCOOSEWPhw2Kp5yAuw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.971616</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;vJOUQtr71wgqCTT6Zvwu4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/3DScans/IAIFridgeDoor/IAIFridgeDoor.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIFridgeDoor;Id,afS9yEehOEmXbl4dreIWqw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;vJOUQtr71wgqCTT6Zvwu4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.347658 -1.018303 0.961920</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIFridgeDoorPanel -->
+	<owl:NamedIndividual rdf:about="&u-map;5JHkmjUwyUuaOIpMFPcaYA">
+		<rdf:type rdf:resource="&knowrob;IAIFridgeDoorPanel"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;BaWGkCOOSEWPhw2Kp5yAuw"/>
+		<knowrob:child rdf:resource="&u-map;jOlVqEf8CEKDUdPo_5HxOQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">dynamic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">5.742665</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;IS6VQtr71whYEjT6Uf0u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIFridgeDoorPanel/IAIFridgeDoorPanel.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIFridgeDoorPanel;Id,5JHkmjUwyUuaOIpMFPcaYA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;IS6VQtr71whYEjT6Uf0u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.302114 -1.020415 0.994839</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAITapMiddle -->
+	<owl:NamedIndividual rdf:about="&u-map;J7reQzj2X0yfSiwyALm5hg">
+		<rdf:type rdf:resource="&knowrob;IAITapMiddle"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;udGlYMSzA02U6HlKQK-F0Q"/>
+		<knowrob:child rdf:resource="&u-map;Waoe44ADD0SJJg-Fz2BB9A"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.133155</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;1_WWQtr71wg2GzT6NP4u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAITapMiddle/IAITapMiddle.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAITapMiddle;Id,J7reQzj2X0yfSiwyALm5hg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;1_WWQtr71wg2GzT6NP4u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.760466 -0.165191 0.919256</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIFilterSmallNew -->
+	<owl:NamedIndividual rdf:about="&u-map;8sXmrVcQREKqbWU1e94j8Q">
+		<rdf:type rdf:resource="&knowrob;IAIFilterSmallNew"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;udGlYMSzA02U6HlKQK-F0Q"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.008824</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;baqXQtr71wh-IzT6B_8u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIFilterSmall/IAIFilterSmall.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIFilterSmallNew;Id,8sXmrVcQREKqbWU1e94j8Q;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;baqXQtr71wh-IzT6B_8u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.601187 -0.165258 0.845775</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIFilterBigNew -->
+	<owl:NamedIndividual rdf:about="&u-map;T5S2TJurV0OeMP7tkFq-uQ">
+		<rdf:type rdf:resource="&knowrob;IAIFilterBigNew"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;udGlYMSzA02U6HlKQK-F0Q"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.115706</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;ze2YQtr71whSLDT66v8u4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIFilterBig/IAIFilterBig.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIFilterBigNew;Id,T5S2TJurV0OeMP7tkFq-uQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;ze2YQtr71whSLDT66v8u4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.599162 -0.403836 0.646802</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;qYGCC-t0BkKx-vqQc_k6vQ">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;KnCVm0S4cUSrMiMcX_6q3w"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;zdiZQtr71wjkNTT63gAv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,qYGCC-t0BkKx-vqQc_k6vQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;zdiZQtr71wjkNTT63gAv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000002 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.708636 0.912639 0.604974</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;MZPTcn_y0EybjwdeIeQ3Hw">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;p2vKETw-P0S6ts1E8_LJxQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;ykCaQtr71wgEPjT6rgEv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,MZPTcn_y0EybjwdeIeQ3Hw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;ykCaQtr71wgEPjT6rgEv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.708639 2.522637 0.604974</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;LwDM-nbbuE2ASggWdzuNmQ">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;8vvGvpP6aUKpTY_KdcySGA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;dfObQtr71whAQzT6NAIv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,LwDM-nbbuE2ASggWdzuNmQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;dfObQtr71whAQzT6NAIv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.714899 2.522637 0.314974</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW100 -->
+	<owl:NamedIndividual rdf:about="&u-map;rLcxDN8mZEqYUR7FOU8Ydw">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW100"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;jBmfQuDmZU65ljvxk8UfGw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.360542</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;3y6cQtr71wheSDT6uAIv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW100/IAIHandleW100.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW100;Id,rLcxDN8mZEqYUR7FOU8Ydw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;3y6cQtr71wheSDT6uAIv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.708638 1.717638 0.604974</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW100 -->
+	<owl:NamedIndividual rdf:about="&u-map;rbaalc-hGEqoHQZMPWLuow">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW100"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;3u4V5AQZzUa-n0gMF2tmLA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.360542</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;hY-dQtr71whqUDT6hQMv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW100/IAIHandleW100.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW100;Id,rbaalc-hGEqoHQZMPWLuow;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;hY-dQtr71whqUDT6hQMv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.714898 1.717639 0.314974</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleH132 -->
+	<owl:NamedIndividual rdf:about="&u-map;Zsy9nZwahky5O00PtCfRhQ">
+		<rdf:type rdf:resource="&knowrob;IAIHandleH132"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;f2G1R0l3VEGQL_uu6-dZcQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">1.362374</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;9QufQtr71whWWjT6gwQv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleH134/IAIHandleH132.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleH132;Id,Zsy9nZwahky5O00PtCfRhQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;9QufQtr71whWWjT6gwQv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.249876 2.390679 0.813329</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleH132 -->
+	<owl:NamedIndividual rdf:about="&u-map;kLvFtu0sgUa2Wxzm6xFpZg">
+		<rdf:type rdf:resource="&knowrob;IAIHandleH132"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;m__YU48hYEyRlgGs6nzoBA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">1.362374</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;BsqgQtr71whYYjT6UQUv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleH134/IAIHandleH132.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleH132;Id,kLvFtu0sgUa2Wxzm6xFpZg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;BsqgQtr71whYYjT6UQUv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.249875 1.490681 0.813329</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;-6q1WRpGU0GA84htsDt2EA">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;hW_22AsScEaGRUcFxtwgdw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;EA-hQtr71wj6ZTT6rgUv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,-6q1WRpGU0GA84htsDt2EA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;EA-hQtr71wj6ZTT6rgUv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.259743 1.940683 0.682312</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;YcdEOjyg3UyE6vF1GlKCcA">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;onMVAtxcYU-Emfmo4RS-4g"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;XvGiQtr71wiIaTT6CAYv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,YcdEOjyg3UyE6vF1GlKCcA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;XvGiQtr71wiIaTT6CAYv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 -0.000000 1.000000 0.000001</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.259450 1.940683 0.825228</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIOvenDoorHandle -->
+	<owl:NamedIndividual rdf:about="&u-map;fjCOHMlHJ0S_1GwEhGsx1A">
+		<rdf:type rdf:resource="&knowrob;IAIOvenDoorHandle"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;J2R8XzQAuUS31QLrYmfG_w"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.35724</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;inGjQtr71whCbjT6gQYv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/ElectricalDevices/IAIOvenDoorHandle/IAIOvenDoorHandle.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIOvenDoorHandle;Id,fjCOHMlHJ0S_1GwEhGsx1A;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;inGjQtr71whCbjT6gQYv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.282395 1.940931 1.305958</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAITapBottom -->
+	<owl:NamedIndividual rdf:about="&u-map;SU9Uok7geEOGDUeFGjySyg">
+		<rdf:type rdf:resource="&knowrob;IAITapBottom"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;udGlYMSzA02U6HlKQK-F0Q"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.124634</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;PPOkQtr71wiQdTT6PQcv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAITapBottom/IAITapBottom.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAITapBottom;Id,SU9Uok7geEOGDUeFGjySyg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;PPOkQtr71wiQdTT6PQcv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.707106 -0.707107</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.685622 -0.238982 0.923827</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIDishwasherDoorPanel -->
+	<owl:NamedIndividual rdf:about="&u-map;sn4r1C-NiU2H2NzqPkQlJg">
+		<rdf:type rdf:resource="&knowrob;IAIDishwasherDoorPanel"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;hKAtW09Y5Uuyu4YyOgv3_w"/>
+		<knowrob:child rdf:resource="&u-map;-N64Gv1F102oPyrGMeBwyw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">4.615781</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;LtulQtr71wioezT62Qcv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIDishwasherDoorPanel/IAIDishwasherDoorPanel.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIDishwasherDoorPanel;Id,sn4r1C-NiU2H2NzqPkQlJg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;LtulQtr71wioezT62Qcv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.308857 0.220716 0.453907</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW80 -->
+	<owl:NamedIndividual rdf:about="&u-map;0aQ38FLTYk-yfJY3L6J-0w">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW80"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;4Qe6CtSziUWnFky5IsZCMw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.274894</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;TeemQtr71wh0gjT6hwgv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW80/IAIHandleW80.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW80;Id,0aQ38FLTYk-yfJY3L6J-0w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;TeemQtr71wh0gjT6hwgv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.262058 0.907615 0.766065</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW80 -->
+	<owl:NamedIndividual rdf:about="&u-map;EwhJy0SA6UKY4OOmsS9Dbg">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW80"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;RnZIoR0MKEqgtqStkWG-lw"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.274894</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;JP2nQtr71wgoiDT6GQkv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW80/IAIHandleW80.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW80;Id,EwhJy0SA6UKY4OOmsS9Dbg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;JP2nQtr71wgoiDT6GQkv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.262058 0.907615 0.623293</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW80 -->
+	<owl:NamedIndividual rdf:about="&u-map;nGkARoj-ikaxBJA4zx6_2A">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW80"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;Be0PXSLFSEyvjFVhwwgTUQ"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.274894</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;BbWoQtr71wjKizT6dgkv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW80/IAIHandleW80.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW80;Id,nGkARoj-ikaxBJA4zx6_2A;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;BbWoQtr71wjKizT6dgkv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.268319 0.907615 0.335028</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;7zkRbAd1fEG9W8M_DmQ0fQ">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;SCjT_g6xo0CZjP3Rq4j3sg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;asupQtr71whijzT60gkv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,7zkRbAd1fEG9W8M_DmQ0fQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;asupQtr71whijzT60gkv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.261628 -0.387028 0.623701</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;oE-oMcWPa0e43vPRhnb5Ng">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;ds8RsNGPIUmzcEUZLYv-1w"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;CqOqQtr71wjmkjT6Kwov4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,oE-oMcWPa0e43vPRhnb5Ng;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;CqOqQtr71wjmkjT6Kwov4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 -0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.714896 0.912639 0.314974</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW86 -->
+	<owl:NamedIndividual rdf:about="&u-map;jOlVqEf8CEKDUdPo_5HxOQ">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW86"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;5JHkmjUwyUuaOIpMFPcaYA"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.39297</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;9tirQtr71wicljT6igov4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW86/IAIHandleW86.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW86;Id,jOlVqEf8CEKDUdPo_5HxOQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;9tirQtr71wicljT6igov4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">0.000000 -0.707106 0.707107 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.262814 -0.767897 1.004839</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAIHandleW60 -->
+	<owl:NamedIndividual rdf:about="&u-map;-N64Gv1F102oPyrGMeBwyw">
+		<rdf:type rdf:resource="&knowrob;IAIHandleW60"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;sn4r1C-NiU2H2NzqPkQlJg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.605312</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;rIysQtr71wgKnDT6FQsv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAIHandleW60/IAIHandleW60.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAIHandleW60;Id,-N64Gv1F102oPyrGMeBwyw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;rIysQtr71wgKnDT6FQsv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 -0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.260180 0.220716 0.768458</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAITapTop -->
+	<owl:NamedIndividual rdf:about="&u-map;Waoe44ADD0SJJg-Fz2BB9A">
+		<rdf:type rdf:resource="&knowrob;IAITapTop"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:parent rdf:resource="&u-map;J7reQzj2X0yfSiwyALm5hg"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">kinematic</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">0.040122</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;zsutQtr71whGoTT6mwsv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAIKitchen/Furniture/IAITapTop/IAITapTop.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAITapTop;Id,Waoe44ADD0SJJg-Fz2BB9A;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;zsutQtr71whGoTT6mwsv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.707106 -0.707107</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">1.744586 -0.179618 0.968266</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;sJ7bav1fKEqDVxXxj2Qclw">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;G32uQtr71wiGpzT6PAwv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,sJ7bav1fKEqDVxXxj2Qclw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;G32uQtr71wiGpzT6PAwv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.345149 -0.659438 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;Pizuzld8UkChLwINFlOjrw">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;b56vQtr71wgmrTT6zAwv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,Pizuzld8UkChLwINFlOjrw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;b56vQtr71wgmrTT6zAwv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-3.115151 -0.649442 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;W3ZVtPElMk6cjP7bA9x-Cg">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;dLawQtr71wiqsDT6JQ0v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,W3ZVtPElMk6cjP7bA9x-Cg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;dLawQtr71wiqsDT6JQ0v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-5.755157 -0.639446 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;rb8ZMToWCU-njfRpvANJLQ">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;n_yxQtr71wj8szT6eg0v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,rb8ZMToWCU-njfRpvANJLQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;n_yxQtr71wj8szT6eg0v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.355153 1.770559 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;t86QRXchr0ewAq_kqWib0A">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;7uWyQtr71whEtzT6zw0v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,t86QRXchr0ewAq_kqWib0A;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;7uWyQtr71whEtzT6zw0v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-3.125154 1.780556 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;xwHJlf9vaU26dGXSMy_ecw">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;MEqzQtr71wi0ujT6Jg4v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,xwHJlf9vaU26dGXSMy_ecw;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;MEqzQtr71wi0ujT6Jg4v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">7.549154 -5.262562 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;-RwHpdzaSUa6JcIPRsy4SA">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;wCq0Qtr71wgGvjT6ew4v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,-RwHpdzaSUa6JcIPRsy4SA;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;wCq0Qtr71wgGvjT6ew4v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.355139 -7.809439 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;xcL72jxscEmMKT_2HHQjeg">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;xtu1Qtr71whEwTT6zw4v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,xcL72jxscEmMKT_2HHQjeg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;xtu1Qtr71whEwTT6zw4v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-3.125142 -7.799445 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;hVZ0RyQ8V0uVfXWEcP_Swg">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;nvS2Qtr71wiCxDT6Ig8v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,hVZ0RyQ8V0uVfXWEcP_Swg;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;nvS2Qtr71wiCxDT6Ig8v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-5.765146 -7.789446 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;0YWyaLAK0kG5TYShZynA4w">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;jhi3Qtr71wjAxzT6dA8v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,0YWyaLAK0kG5TYShZynA4w;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;jhi3Qtr71wjAxzT6dA8v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-0.365142 -5.889437 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;Ga6ZzpGZqE6Xkc1fpUpN0g">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;k7S4Qtr71wj-yjT6yA8v4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,Ga6ZzpGZqE6Xkc1fpUpN0g;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;k7S4Qtr71wj-yjT6yA8v4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-3.135144 -5.939440 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Individual IAICeilingLight -->
+	<owl:NamedIndividual rdf:about="&u-map;ATADTZdHekesxjhy1DnCdQ">
+		<rdf:type rdf:resource="&knowrob;IAICeilingLight"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:mobility rdf:datatype="&xsd;string">static</knowrob:mobility>
+		<knowrob:mass rdf:datatype="&xsd;float">56.968174</knowrob:mass>
+		<knowrob:overlapEvents rdf:datatype="&xsd;boolean">false</knowrob:overlapEvents>
+		<knowrob:gravity rdf:datatype="&xsd;boolean">true</knowrob:gravity>
+		<knowrob:pose rdf:resource="&u-map;aDW5Qtr71wjwzjT6LBAv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAICeilingLight/IAICeilingLight.dae</knowrob:pathToCadModel>
+		<knowrob:tagsData rdf:datatype="&xsd;string">SemLog;Class,IAICeilingLight;Id,ATADTZdHekesxjhy1DnCdQ;</knowrob:tagsData>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;aDW5Qtr71wjwzjT6LBAv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 0.000000 -1.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-5.775147 -5.869444 2.790969</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Monas Additions -->
+		<!-- Object LabWalls_zY2J -->
+	<owl:NamedIndividual rdf:about="&u-map;KLVBTZdHekesxjhy1DnCdQ">
+		<rdf:type rdf:resource="&knowrob;IAILabWalls"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:depthOfObject rdf:datatype="&xsd;double">21.250448</knowrob:depthOfObject>
+		<knowrob:widthOfObject rdf:datatype="&xsd;double">12.470443</knowrob:widthOfObject>
+		<knowrob:heightOfObject rdf:datatype="&xsd;double">13.0</knowrob:heightOfObject>
+		<knowrob:pose rdf:resource="&u-map;bGH4Qtr71wjwzjT6LBAv4A"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://Meshes_UnrealEngine/meshes_RobCog/PublicMeshes/IAILab/IAILabWalls/IAILabWalls.dae</knowrob:pathToCadModel>
+		<knowrob_u:dynamicEntity rdf:datatype="&xsd;boolean">0</knowrob_u:dynamicEntity>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;bGH4Qtr71wjwzjT6LBAv4A">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">0.891999969 -1.736000061 0.0</knowrob:translation>
+	</owl:NamedIndividual>
+
+		<!-- Table -->
+	<owl:NamedIndividual rdf:about="&u-map;Table">
+		<rdf:type rdf:resource="&knowrob;IAITable"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:pose rdf:resource="&u-map;bGH4Qtr71wjwzjT6LBAv4B"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://addob/table.dae</knowrob:pathToCadModel>
+		<knowrob_u:dynamicEntity rdf:datatype="&xsd;boolean">0</knowrob_u:dynamicEntity>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;bGH4Qtr71wjwzjT6LBAv4B">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">-0.000000 0.000000 1.000000 0.000000</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-3.39746582 1.360294495 0.700618362</knowrob:translation>
+	</owl:NamedIndividual>
+
+	<!-- Chair -->
+	<owl:NamedIndividual rdf:about="&u-map;Chair">
+		<rdf:type rdf:resource="&knowrob;IAIChair"/>
+		<knowrob:describedInMap rdf:resource="&u-map;SemanticEnvironmentMap_Avatar"/>
+		<knowrob:pose rdf:resource="&u-map;bGH4Qtr71wjwzjT6LBAv4C"/>
+		<knowrob:pathToCadModel rdf:datatype="&xsd;string">package://addob/chair.dae</knowrob:pathToCadModel>
+		<knowrob_u:dynamicEntity rdf:datatype="&xsd;boolean">0</knowrob_u:dynamicEntity>
+	</owl:NamedIndividual>
+	<owl:NamedIndividual rdf:about="&u-map;bGH4Qtr71wjwzjT6LBAv4C">
+		<rdf:type rdf:resource="&knowrob;Pose"/>
+		<knowrob:quaternion rdf:datatype="&xsd;string">0.000000 0.000000 0 0</knowrob:quaternion>
+		<knowrob:translation rdf:datatype="&xsd;string">-4.759905396 1.469783325 -0.00000076</knowrob:translation>
+	</owl:NamedIndividual>
+
+
+
+</rdf:RDF>
