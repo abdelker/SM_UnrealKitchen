@@ -1,0 +1,3 @@
+[submodule "Meshes_UnrealEngine/meshes_RobCog/PublicMeshes"]
+	path = Meshes_UnrealEngine/meshes_RobCog/PublicMeshes
+	url = https://github.com/abdelker/PublicMeshes.git
